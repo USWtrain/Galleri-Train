@@ -419,8 +419,8 @@ body{font-family:var(--font);background:var(--off-white);color:var(--text-primar
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px">Print on every label: Full name &middot; DOB (mm/dd/yyyy) &middot; Sex at birth &middot; Collection date</p>
       <table class="field-table">
         <tr><th>Label</th><th>Goes on</th></tr>
-        <tr><td><span class="tag teal">A1</span></td><td>First tube &mdash; on top of Streck label</td></tr>
-        <tr><td><span class="tag teal">A2</span></td><td>Second tube &mdash; on top of Streck label</td></tr>
+        <tr><td><span class="tag teal">A1</span></td><td>First tube &mdash; on top of Streck label, but below the LOT number and Expiration Date printed on the Streck label</td></tr>
+        <tr><td><span class="tag teal">A2</span></td><td>Second tube &mdash; on top of Streck label, but below the LOT number and Expiration Date printed on the Streck label</td></tr>
         <tr><td><span class="tag navy">A3</span></td><td>GRAIL exit card</td></tr>
         <tr><td><span class="tag navy">A4</span></td><td>US Wellness consent form</td></tr>
         <tr><td><span class="tag amber">Barcode</span></td><td>Top right of TRF (no patient ID lines on barcode sticker)</td></tr>
@@ -475,6 +475,7 @@ body{font-family:var(--font);background:var(--off-white);color:var(--text-primar
         <li><span class="checklist-dot" style="background:rgba(255,255,255,.4)"></span><span style="color:rgba(255,255,255,.8)">TRFs are either completed at the event on paper forms or are on file with the lab when the patient completes a clinical survey online in advance of the event</span></li>
         <li><span class="checklist-dot" style="background:rgba(255,255,255,.4)"></span><span style="color:rgba(255,255,255,.8)">Paper TRFs are most common at <strong style="color:var(--teal)">Fire department events</strong></span></li>
         <li><span class="checklist-dot" style="background:rgba(255,255,255,.4)"></span><span style="color:rgba(255,255,255,.8)"><strong style="color:var(--teal)">Check Clinical Notes for TRF instruction!</strong> Some events have a combination of paper and pre-completed online TRFs. In this case, you will find specific direction in the Clinical Notes field in Salesforce &mdash; this field pops up when you select the participant&rsquo;s name from the appointment list. Follow the Clinical Notes precisely when present. Call US Wellness on-call if you are unsure.</span></li>
+        <li><span class="checklist-dot" style="background:rgba(255,255,255,.4)"></span><span style="color:rgba(255,255,255,.8)">If <strong style="color:var(--teal)">Clinical Notes = Confirm Order ID</strong>, you must confirm that the participant has an Order ID before proceeding with their specimen collection. Ask them for their Order ID and let them know that their Order ID may be found on the confirmation email received from Grail when they completed their medical history questionnaire online.</span></li>
         <li><span class="checklist-dot" style="background:rgba(255,255,255,.4)"></span><span style="color:rgba(255,255,255,.8)">If the patient requires a paper TRF, <strong style="color:var(--teal)">fold the completed TRF three times</strong> and place in the front flap of the biohazard bag.</span></li>
       </ul>
     </div></div>
@@ -508,9 +509,9 @@ body{font-family:var(--font);background:var(--off-white);color:var(--text-primar
   <div class="section">
     <div class="section-title">Salesforce Data Entry</div>
     <div class="card">
-      <div class="card-title">&#128187; Required for All Non-GGC Events</div>
+      <div class="card-title">&#128187; Salesforce Data Entry</div>
       <ul class="checklist">
-        <li><span class="checklist-dot"></span>Salesforce data entry is <strong>required for all events except GGC (provider/doctor office) events</strong></li>
+        <li><span class="checklist-dot"></span>Check data entry notes in the <strong>US Wellness Go app</strong> to know if you are required to enter data into Salesforce at your event.</li>
         <li><span class="checklist-dot"></span>Log in to Salesforce on your tablet at the start of every applicable event</li>
         <li><span class="checklist-dot"></span>Record each participant draw, including number of tubes collected and any notes</li>
         <li><span class="checklist-dot"></span>Clinical Notes for each participant appear when you select their name from the appointment list &mdash; review before drawing</li>
@@ -681,7 +682,7 @@ const QUIZZES=[
   ]},
   {qs:[
     {t:"Why should the arm be kept in a downward position during blood collection?",o:["To improve blood flow speed","To avoid backflow due to the preservative in Streck tubes","Per patient comfort guidelines","To fill both tubes evenly"],a:1,r:"Correct! The downward position prevents backflow from the preservative in Streck tubes.",w:"Incorrect. The downward arm position prevents backflow due to the preservative in Streck tubes."},
-    {t:"In a Galleri Kit, where does the A1 label go?",o:["On the TRF","On the exit card","On the first tube, on top of the Streck label","On the consent form"],a:2,r:"Correct! A1 goes on the first blood collection tube, on top of the Streck label.",w:"Incorrect. A1 goes on the first blood collection tube, on top of the Streck label."},
+    {t:"In a Galleri Kit, where does the A1 label go?",o:["On the TRF","On the exit card","On the first tube, on top of Streck label but below the LOT number and Expiration Date","On the consent form"],a:2,r:"Correct! A1 goes on the first blood collection tube, on top of the Streck label but below the LOT number and Expiration Date.",w:"Incorrect. A1 goes on the first blood collection tube, on top of the Streck label but below the LOT number and Expiration Date."},
     {t:"For Bulk Kit packaging, how many foil pouches go into each GRAIL shipping box?",o:["1","2","5","10"],a:1,r:"Correct! Maximum 2 foil pouches per GRAIL shipping box.",w:"Incorrect. Maximum 2 foil pouches per GRAIL shipping box."},
     {t:"When applying a patient label to a Streck tube, where must the label be placed?",o:["Over the LOT number and Expiration date to keep them protected","Anywhere on the tube as long as the name is legible","Below the LOT number and Expiration date so both remain visible","On the cap of the tube"],a:2,r:"Correct! The patient label must be placed BELOW the LOT number and Expiration date. Both must remain visible.",w:"Incorrect. The patient label must be placed BELOW the LOT number and Expiration date &mdash; never covering them."}
   ]},
